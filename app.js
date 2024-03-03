@@ -64,7 +64,7 @@ const image6 = document.getElementById("image6");
 var quoteRef = database.ref('proofpay');
 
 // Using once() to retrieve data once
-quoteRef.on('value', function (snapshot) {
+quoteRef.once('value', function (snapshot) {
 
 	var card1R = snapshot.val().card1.isRedeemed;
 	var card2R = snapshot.val().card2.isRedeemed;
@@ -435,6 +435,8 @@ quoteRef.on('value', function (snapshot) {
 					notif.innerHTML = "Failed to save link.";
 				}
 			} else {
+
+				location.reload();
 
 				
 			}
